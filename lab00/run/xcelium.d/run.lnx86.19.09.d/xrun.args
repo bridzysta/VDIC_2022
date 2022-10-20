@@ -1,0 +1,8 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-F
+../tb/tb.f
+-v93
+-clean

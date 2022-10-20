@@ -1,0 +1,26 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-F
+../tb/tb.f
+-v93
++nowarnDSEM2009
++nowarnDSEMEL
++nowarnCGDEFN
++nowarnCOVUTA
++nowarnBADPRF
++nowarnXCLGNOPTM
++nowarnRNDXCELON
+-xmlibdirname
+INCA_libs
++overwrite
+-nocopyright
+-coverage
+all
+-covoverwrite
+-covfile
+xrun_covfile.txt
++UVM_TESTNAME=lab00
+-l
+xrun_test_lab00.log

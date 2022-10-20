@@ -1,0 +1,71 @@
+xrun: 19.09-s003: (c) Copyright 1995-2019 Cadence Design Systems, Inc.
+TOOL:	xrun	19.09-s003: Started on Oct 13, 2022 at 18:27:27 CEST
+xrun
+	-F ../tb/tb.f
+		-F ../tb/../../rtl/rtl.f
+			single_cycle_add_and_xor.vhd
+			three_cycle_mult.vhd
+			tinyalu.vhd
+		tinyalu_tb.sv
+	-v93
+	-clean
+xrun: *N,CLEAN: Removing existing directory ./xcelium.d.
+file: ../tb/tinyalu_tb.sv
+	module worklib.top:sv
+		errors: 0, warnings: 0
+../tb/../../rtl/single_cycle_add_and_xor.vhd:
+	errors: 0, warnings: 0
+../tb/../../rtl/three_cycle_mult.vhd:
+	errors: 0, warnings: 0
+../tb/../../rtl/tinyalu.vhd:
+	errors: 0, warnings: 0
+WORKLIB.SINGLE_CYCLE (entity):
+	streams: 13, words: 975
+WORKLIB.SINGLE_CYCLE:ADD_AND_XOR (architecture):
+	streams: 1, words: 114
+WORKLIB.THREE_CYCLE (entity):
+	streams: 11, words: 760
+WORKLIB.THREE_CYCLE:MULT (architecture):
+	streams: 1, words: 926
+WORKLIB.TINYALU (entity):
+	streams: 13, words: 985
+WORKLIB.TINYALU:RTL (architecture):
+	streams: 3, words: 3578
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		top
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.top:sv <0x2fdb549f>
+			streams:  12, words: 11420
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		              Instances  Unique
+	VHDL Design hierarchy:
+		Components:           3       3
+		Processes:            9       9
+		Signals:             16      16
+	Verilog Design hierarchy:
+		Modules:              1       1
+		Registers:           18      18
+		Scalar wires:         3       -
+		Expanded wires:      19       3
+		Initial blocks:       3       3
+		Final blocks:         1       1
+		Cont. assignments:    0       1
+		Pseudo assignments:   3       3
+		Assertions:           1       1
+	Writing initial simulation snapshot: worklib.top:sv
+Loading snapshot worklib.top:sv .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /cad/XCELIUM1909/tools/xcelium/files/xmsimrc
+xcelium> run
+Test PASSED.
+Simulation complete via $finish(1) at time 4380 NS + 0
+../tb/tinyalu_tb.sv:145     $finish;
+xcelium> exit
+TOOL:	xrun	19.09-s003: Exiting on Oct 13, 2022 at 18:27:29 CEST  (total: 00:00:02)
