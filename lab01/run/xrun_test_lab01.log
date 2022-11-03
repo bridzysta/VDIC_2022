@@ -1,0 +1,54 @@
+TOOL:	xrun	21.03-s009: Started on Nov 03, 2022 at 09:17:06 CET
+xrun
+	-F ../tb/tb.f
+		-F ../tb/../../rtl/rtl.f
+			vdic_dut_2022_1_0.sv
+		alu_tb.sv
+	-v93
+	+nowarnDSEM2009
+	+nowarnDSEMEL
+	+nowarnCGDEFN
+	+nowarnCOVUTA
+	+nowarnBADPRF
+	+nowarnXCLGNOPTM
+	+nowarnRNDXCELON
+	+nowarnSAWSTP
+	-xmlibdirname INCA_libs
+	+overwrite
+	-nocopyright
+	+UVM_TESTNAME=lab01
+	-l xrun_test_lab01.log
+Compiling UVM packages (uvm_pkg.sv cdns_uvm_pkg.sv) using uvmhome location /eda/cadence/2021-22/RHELx86/XCELIUM_21.03.009/tools/methodology/UVM/CDNS-1.1d
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		alu_tb
+	Building instance overlay tables: .................... Done
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                Instances  Unique
+		Modules:              277       3
+		Primitives:          2742       4
+		Registers:            311      37
+		Scalar wires:        1631       -
+		Always blocks:        275       1
+		Initial blocks:       278       4
+		Final blocks:           1       1
+		Cont. assignments:    275       1
+		Pseudo assignments:     1       1
+		Assertions:             1       1
+	Writing initial simulation snapshot: worklib.alu_tb:sv
+Loading snapshot worklib.alu_tb:sv .................... Done
+SVSEED default: 1
+xcelium> source /eda/cadence/2021-22/RHELx86/XCELIUM_21.03.009/tools/xcelium/files/xmsimrc
+xcelium> source /eda/cadence/2021-22/RHELx86/XCELIUM_21.03.009/tools/methodology/UVM/CDNS-1.1d/additions/sv/files/tcl/uvm_sim.tcl
+xcelium> run
+[1;30m[102m-----------------------------------
+----------- Test PASSED -----------
+-----------------------------------[0m
+
+Simulation complete via $finish(1) at time 198050 NS + 0
+../tb/alu_tb.sv:229   $finish;
+xcelium> exit
+TOOL:	xrun	21.03-s009: Exiting on Nov 03, 2022 at 09:17:08 CET  (total: 00:00:02)
