@@ -1,0 +1,32 @@
+TOOL:	xrun	21.03-s009: Started on Nov 10, 2022 at 18:39:36 CET
+xrun
+	-compile
+	-l xrun_compile.log
+	-F ../tb/tb.f
+		-F ../tb/../../rtl/rtl.f
+			vdic_dut_2022_1_1.sv
+		alu_tb.sv
+	-v93
+	+nowarnDSEM2009
+	+nowarnDSEMEL
+	+nowarnCGDEFN
+	+nowarnCOVUTA
+	+nowarnBADPRF
+	+nowarnXCLGNOPTM
+	+nowarnRNDXCELON
+	+nowarnSAWSTP
+	-xmlibdirname INCA_libs
+	+overwrite
+	-nocopyright
+	-coverage all
+	-covoverwrite
+	-covfile xrun_covfile.txt
+file: ../tb/../../rtl/vdic_dut_2022_1_1.sv
+	module worklib.vdic_dut_2022:sv
+		errors: 0, warnings: 0
+	module worklib.CDN_flop:sv
+		errors: 0, warnings: 0
+file: ../tb/alu_tb.sv
+	module worklib.alu_tb:sv
+		errors: 0, warnings: 0
+TOOL:	xrun	21.03-s009: Exiting on Nov 10, 2022 at 18:39:37 CET  (total: 00:00:01)
