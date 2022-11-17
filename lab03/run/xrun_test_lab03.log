@@ -1,0 +1,127 @@
+TOOL:	xrun	21.03-s009: Started on Nov 17, 2022 at 17:58:32 CET
+xrun
+	-F ../tb/tb.f
+		-F ../tb/../../rtl/rtl.f
+			vdic_dut_2022_1_2.sv
+		tinyalu_pkg.sv
+		tinyalu_bfm.sv
+		tester.sv
+		coverage.sv
+		scoreboard.sv
+		top.sv
+	-v93
+	+nowarnDSEM2009
+	+nowarnDSEMEL
+	+nowarnCGDEFN
+	+nowarnCOVUTA
+	+nowarnBADPRF
+	+nowarnXCLGNOPTM
+	+nowarnRNDXCELON
+	+nowarnSAWSTP
+	-xmlibdirname INCA_libs
+	+overwrite
+	-nocopyright
+	-coverage all
+	-covoverwrite
+	-covfile xrun_covfile.txt
+	-covtest lab03
+	+UVM_TESTNAME=lab03
+	-l xrun_test_lab03.log
+Compiling UVM packages (uvm_pkg.sv cdns_uvm_pkg.sv) using uvmhome location /eda/cadence/2021-22/RHELx86/XCELIUM_21.03.009/tools/methodology/UVM/CDNS-1.1d
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		tinyalu_pkg
+		top
+
+	Extracting FSMs for coverage:
+		worklib.tester
+		worklib.coverage
+		worklib.scoreboard
+		worklib.CDN_flop
+		worklib.vdic_dut_2022
+		worklib.top
+	Total FSMs extracted = 0
+	Building instance overlay tables: .................... Done
+	Enabling instrumentation for coverage types: block expression FSM toggle functional
+	Building instance specific data structures.
+	Performing constant object marking (COM) analysis.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                  Instances  Unique
+		Modules:                312       6
+		Interfaces:               1       1
+		Verilog packages:         1       1
+		Primitives:            4224       4
+		Registers:              348      42
+		Scalar wires:          1823       -
+		Always blocks:          308       2
+		Initial blocks:         311       5
+		Final blocks:             1       1
+		Cont. assignments:      307       1
+		Pseudo assignments:       4       4
+		Covergroup Instances:     0       2
+	Writing initial simulation snapshot: worklib.top:sv
+Loading snapshot worklib.top:sv .................... Done
+SVSEED default: 1
+xcelium> source /eda/cadence/2021-22/RHELx86/XCELIUM_21.03.009/tools/xcelium/files/xmsimrc
+xcelium> source /eda/cadence/2021-22/RHELx86/XCELIUM_21.03.009/tools/methodology/UVM/CDNS-1.1d/additions/sv/files/tcl/uvm_sim.tcl
+xcelium> run
+Test FAILED for 
+command: 1101111000
+0 data: 0110001100
+1 data: 0111010110
+2 data: 0000000000
+3 data: 0000000000
+Expected: 0000000100000000000100011100
+Received: 0000000100000000000000000000
+Test FAILED for 
+command: 1000000010
+0 data: 0111111110
+1 data: 0011000011
+Expected: 0000000100000000000100101001
+Received: 0000000100000000000000100001
+Test FAILED for 
+command: 1001000000
+0 data: 0001100101
+1 data: 0111110100
+2 data: 0111111110
+3 data: 0101101000
+Expected: 0000000100000000000111111110
+Received: 0000000100000000000000000000
+Test FAILED for 
+command: 1000100000
+0 data: 0111111110
+1 data: 0010010011
+2 data: 0000000000
+3 data: 0011111100
+4 data: 0110000000
+5 data: 0111111110
+6 data: 0111111110
+Expected: 0000000100000000000111111110
+Received: 0000000100000000000100011001
+Test FAILED for 
+command: 1000000100
+0 data: 0011010010
+1 data: 0000000000
+Expected: 0000000100000000000001011111
+Received: 0000000100000000000000000000
+[1;30m[101m-----------------------------------
+----------- Test FAILED -----------
+-----------------------------------[0m
+
+Simulation complete via $finish(1) at time 191040 NS + 0
+../tb/tester.sv:115   $finish;
+xcelium> exit
+See ./cov_work/scope/lab03/icc.com file for message(s) on coverage constant object marking
+
+coverage setup:
+  workdir  :  ./cov_work
+  dutinst  :  top(top)
+  scope    :  scope
+  testname :  lab03
+
+coverage files:
+  model(design data) :  ./cov_work/scope/icc_00d061d4_4686a2ed.ucm
+  data               :  ./cov_work/scope/lab03/icc_00d061d4_4686a2ed.ucd
+TOOL:	xrun	21.03-s009: Exiting on Nov 17, 2022 at 17:58:34 CET  (total: 00:00:02)

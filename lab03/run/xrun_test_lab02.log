@@ -1,0 +1,282 @@
+TOOL:	xrun	21.03-s009: Started on Nov 10, 2022 at 15:38:48 CET
+xrun
+	-F ../tb/tb.f
+		-F ../tb/../../rtl/rtl.f
+			vdic_dut_2022_1_1.sv
+		alu_tb.sv
+	-v93
+	+nowarnDSEM2009
+	+nowarnDSEMEL
+	+nowarnCGDEFN
+	+nowarnCOVUTA
+	+nowarnBADPRF
+	+nowarnXCLGNOPTM
+	+nowarnRNDXCELON
+	+nowarnSAWSTP
+	-xmlibdirname INCA_libs
+	+overwrite
+	-nocopyright
+	-coverage all
+	-covoverwrite
+	-covfile xrun_covfile.txt
+	+UVM_TESTNAME=lab02
+	-l xrun_test_lab02.log
+Compiling UVM packages (uvm_pkg.sv cdns_uvm_pkg.sv) using uvmhome location /eda/cadence/2021-22/RHELx86/XCELIUM_21.03.009/tools/methodology/UVM/CDNS-1.1d
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		alu_tb
+
+	Extracting FSMs for coverage:
+		worklib.CDN_flop
+		worklib.vdic_dut_2022
+		worklib.alu_tb
+	Total FSMs extracted = 0
+	Building instance overlay tables: .................... Done
+	Enabling instrumentation for coverage types: block expression FSM toggle functional
+	Building instance specific data structures.
+	Performing constant object marking (COM) analysis.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                  Instances  Unique
+		Modules:                309       3
+		Primitives:            4603       4
+		Registers:              351      45
+		Scalar wires:          1823       -
+		Always blocks:          308       2
+		Initial blocks:         311       5
+		Final blocks:             1       1
+		Cont. assignments:      307       1
+		Pseudo assignments:       2       2
+		Assertions:               1       1
+		Covergroup Instances:     0       2
+	Writing initial simulation snapshot: worklib.alu_tb:sv
+Loading snapshot worklib.alu_tb:sv .................... Done
+SVSEED default: 1
+xcelium> source /eda/cadence/2021-22/RHELx86/XCELIUM_21.03.009/tools/xcelium/files/xmsimrc
+xcelium> source /eda/cadence/2021-22/RHELx86/XCELIUM_21.03.009/tools/methodology/UVM/CDNS-1.1d/additions/sv/files/tcl/uvm_sim.tcl
+xcelium> run
+xmsim: *E,ASRTST (../tb/alu_tb.sv,402): (time 8960 NS) Assertion alu_tb.scoreboard.unmblk1.__assert_1 has failed 
+Test FAILED for 
+command: 1000100000
+0 data: 0110010100
+1 data: 0111111110
+2 data: 0111111110
+Expected: 0000000000000000000000000000
+Received: 0000000000000000000000000101
+xmsim: *E,ASRTST (../tb/alu_tb.sv,402): (time 11800 NS) Assertion alu_tb.scoreboard.unmblk1.__assert_1 has failed 
+Test FAILED for 
+command: 1000000100
+0 data: 0101111001
+1 data: 0110001100
+2 data: 0111111110
+Expected: 0000000100000000000100010000
+Received: 0000000100000000000000000000
+xmsim: *E,ASRTST (../tb/alu_tb.sv,402): (time 27160 NS) Assertion alu_tb.scoreboard.unmblk1.__assert_1 has failed 
+Test FAILED for 
+command: 1000000111
+0 data: 0000000000
+1 data: 0101110000
+2 data: 0000000000
+3 data: 0101101101
+4 data: 0111111110
+5 data: 0010011100
+6 data: 0111111110
+7 data: 0111111011
+Expected: 0000000000000000000000000000
+Received: 0000000000000000000101010111
+xmsim: *E,ASRTST (../tb/alu_tb.sv,402): (time 38880 NS) Assertion alu_tb.scoreboard.unmblk1.__assert_1 has failed 
+Test FAILED for 
+command: 1000000001
+0 data: 0100001101
+1 data: 0111111110
+2 data: 0011000011
+Expected: 0000000000000000000000000000
+Received: 0000000000000000000110110110
+xmsim: *E,ASRTST (../tb/alu_tb.sv,402): (time 43740 NS) Assertion alu_tb.scoreboard.unmblk1.__assert_1 has failed 
+Test FAILED for 
+command: 1000100000
+0 data: 0101110101
+1 data: 0111111110
+2 data: 0111111110
+3 data: 0000100111
+4 data: 0110010001
+5 data: 0001110001
+6 data: 0100011010
+Expected: 0000000000000000000000000000
+Received: 0000000000000000000111001101
+xmsim: *E,ASRTST (../tb/alu_tb.sv,402): (time 57080 NS) Assertion alu_tb.scoreboard.unmblk1.__assert_1 has failed 
+Test FAILED for 
+command: 1000000010
+0 data: 0100101100
+1 data: 0000101000
+2 data: 0000000000
+3 data: 0000000000
+4 data: 0111111110
+Expected: 0000000100000000000101000000
+Received: 0000000100000000000000000000
+xmsim: *E,ASRTST (../tb/alu_tb.sv,402): (time 64360 NS) Assertion alu_tb.scoreboard.unmblk1.__assert_1 has failed 
+Test FAILED for 
+command: 1000000010
+0 data: 0000000000
+1 data: 0000000000
+2 data: 0110001010
+3 data: 0000000000
+4 data: 0000000000
+5 data: 0000000000
+Expected: 0000000000000000000000000000
+Received: 0000000000000000000111111110
+xmsim: *E,ASRTST (../tb/alu_tb.sv,402): (time 72440 NS) Assertion alu_tb.scoreboard.unmblk1.__assert_1 has failed 
+Test FAILED for 
+command: 1001000000
+0 data: 0111000001
+1 data: 0000000000
+2 data: 0101100010
+3 data: 0111111110
+4 data: 0111111110
+5 data: 0111111110
+6 data: 0111111110
+7 data: 0111111011
+Expected: 0000000100000000000001100110
+Received: 0000000100000000000000000000
+xmsim: *E,ASRTST (../tb/alu_tb.sv,402): (time 94060 NS) Assertion alu_tb.scoreboard.unmblk1.__assert_1 has failed 
+Test FAILED for 
+command: 1000000001
+0 data: 0110001010
+1 data: 0000000000
+2 data: 0110110110
+3 data: 0111111110
+4 data: 0111010011
+5 data: 0111111110
+6 data: 0000000000
+Expected: 0000000000000000000000000000
+Received: 0000000000000000000001100000
+xmsim: *E,ASRTST (../tb/alu_tb.sv,402): (time 99920 NS) Assertion alu_tb.scoreboard.unmblk1.__assert_1 has failed 
+Test FAILED for 
+command: 1000000010
+0 data: 0000000000
+1 data: 0111000100
+2 data: 0011111010
+3 data: 0000011110
+4 data: 0000000000
+5 data: 0011010001
+Expected: 0000000000000000000000000000
+Received: 0000000000000000000111111110
+xmsim: *E,ASRTST (../tb/alu_tb.sv,402): (time 111040 NS) Assertion alu_tb.scoreboard.unmblk1.__assert_1 has failed 
+Test FAILED for 
+command: 1001000000
+0 data: 0000000000
+1 data: 0111111110
+2 data: 0101110011
+3 data: 0110101000
+4 data: 0000000000
+Expected: 0000000000000000000000000000
+Received: 0000000000000000000111111110
+xmsim: *E,ASRTST (../tb/alu_tb.sv,402): (time 126820 NS) Assertion alu_tb.scoreboard.unmblk1.__assert_1 has failed 
+Test FAILED for 
+command: 1100110101
+0 data: 0000000000
+1 data: 0000000000
+2 data: 0000000000
+Expected: 0000000000000000000000000000
+Received: 0000000000000000000101001010
+xmsim: *E,ASRTST (../tb/alu_tb.sv,402): (time 134900 NS) Assertion alu_tb.scoreboard.unmblk1.__assert_1 has failed 
+Test FAILED for 
+command: 1101111110
+0 data: 0100010011
+1 data: 0111010110
+2 data: 0111111110
+3 data: 0000000000
+4 data: 0000000000
+5 data: 0111111110
+Expected: 0000000100000000000001100101
+Received: 0000000100000000000000000000
+xmsim: *E,ASRTST (../tb/alu_tb.sv,402): (time 136920 NS) Assertion alu_tb.scoreboard.unmblk1.__assert_1 has failed 
+Test FAILED for 
+command: 1000000100
+0 data: 0100000100
+1 data: 0111111110
+2 data: 0000000000
+Expected: 0000000000000000000000000000
+Received: 0000000000000000000100010011
+xmsim: *E,ASRTST (../tb/alu_tb.sv,402): (time 142980 NS) Assertion alu_tb.scoreboard.unmblk1.__assert_1 has failed 
+Test FAILED for 
+command: 1000000100
+0 data: 0000000000
+1 data: 0111111110
+2 data: 0111111110
+3 data: 0111111110
+4 data: 0111111110
+Expected: 0000000000000000000000000000
+Received: 0000000000000000000111111101
+xmsim: *E,ASRTST (../tb/alu_tb.sv,402): (time 147220 NS) Assertion alu_tb.scoreboard.unmblk1.__assert_1 has failed 
+Test FAILED for 
+command: 1110111000
+0 data: 0111111110
+1 data: 0000000000
+2 data: 0111111110
+Expected: 0000000000000000000000000000
+Received: 0000000000000000000011000000
+xmsim: *E,ASRTST (../tb/alu_tb.sv,402): (time 148640 NS) Assertion alu_tb.scoreboard.unmblk1.__assert_1 has failed 
+Test FAILED for 
+command: 1000000010
+0 data: 0000000000
+1 data: 0111111110
+2 data: 0000000000
+3 data: 0000000000
+4 data: 0000000000
+Expected: 0000000000000000000000000000
+Received: 0000000000000000000111111110
+xmsim: *E,ASRTST (../tb/alu_tb.sv,402): (time 156320 NS) Assertion alu_tb.scoreboard.unmblk1.__assert_1 has failed 
+Test FAILED for 
+command: 1100000101
+0 data: 0110010010
+1 data: 0000000000
+2 data: 0111111110
+Expected: 0000000000000000000000000000
+Received: 0000000000000000000111111110
+xmsim: *E,ASRTST (../tb/alu_tb.sv,402): (time 157740 NS) Assertion alu_tb.scoreboard.unmblk1.__assert_1 has failed 
+Test FAILED for 
+command: 1000000100
+0 data: 0101101011
+1 data: 0000000000
+2 data: 0111111110
+3 data: 0000000000
+4 data: 0110001111
+Expected: 0000000000000000000000000000
+Received: 0000000000000000000110010010
+xmsim: *E,ASRTST (../tb/alu_tb.sv,402): (time 165020 NS) Assertion alu_tb.scoreboard.unmblk1.__assert_1 has failed 
+Test FAILED for 
+command: 1001000000
+0 data: 0010110010
+1 data: 0010001101
+2 data: 0000000000
+Expected: 0000000000000000000000000000
+Received: 0000000000000000000111111110
+xmsim: *E,ASRTST (../tb/alu_tb.sv,402): (time 169680 NS) Assertion alu_tb.scoreboard.unmblk1.__assert_1 has failed 
+Test FAILED for 
+command: 1001000000
+0 data: 0011101110
+1 data: 0101111111
+2 data: 0000000000
+Expected: 0000000000000000000000000000
+Received: 0000000000000000000110101101
+[1;30m[101m-----------------------------------
+----------- Test FAILED -----------
+-----------------------------------[0m
+
+Simulation complete via $finish(1) at time 185260 NS + 0
+../tb/alu_tb.sv:277   $finish;
+xcelium> exit
+See ./cov_work/scope/test/icc.com file for message(s) on coverage constant object marking
+
+coverage setup:
+  workdir  :  ./cov_work
+  dutinst  :  alu_tb(alu_tb)
+  scope    :  scope
+  testname :  test
+
+coverage files:
+  model(design data) :  ./cov_work/scope/icc_7fbe49fa_7705e992.ucm
+  data               :  ./cov_work/scope/test/icc_7fbe49fa_7705e992.ucd
+TOOL:	xrun	21.03-s009: Exiting on Nov 10, 2022 at 15:38:52 CET  (total: 00:00:04)
