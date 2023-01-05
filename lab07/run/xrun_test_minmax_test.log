@@ -1,0 +1,1624 @@
+TOOL:	xrun	21.03-s009: Started on Jan 05, 2023 at 17:52:15 CET
+xrun
+	-F ../tb/tb.f
+		-F ../tb/../../rtl/rtl.f
+			vdic_dut_2022_1_4.sv
+		alu_pkg.sv
+		alu_bfm.sv
+		top.sv
+		+incdir+tb_classes
+		+incdir+.
+		-uvm
+		-uvmhome /eda/cadence/2021-22/RHELx86/XCELIUM_21.03.009/tools/methodology/UVM/CDNS-1.2/sv
+		+UVM_NO_RELNOTES
+		+UVM_VERBOSITY=MEDIUM
+		-linedebug
+		-fsmdebug
+		-uvmlinedebug
+	-v93
+	+nowarnDSEM2009
+	+nowarnDSEMEL
+	+nowarnCGDEFN
+	+nowarnCOVUTA
+	+nowarnBADPRF
+	+nowarnXCLGNOPTM
+	+nowarnRNDXCELON
+	+nowarnSAWSTP
+	-xmlibdirname INCA_libs
+	+overwrite
+	-nocopyright
+	-coverage all
+	-covoverwrite
+	-covfile xrun_covfile.txt
+	-covtest minmax_test
+	+UVM_TESTNAME=minmax_test
+	-l xrun_test_minmax_test.log
+
+   User defined plus("+") options:
+	+UVM_NO_RELNOTES
+	+UVM_VERBOSITY=MEDIUM
+
+Loading snapshot worklib.top:sv .................... Done
+SVSEED default: 1
+xcelium> source /eda/cadence/2021-22/RHELx86/XCELIUM_21.03.009/tools/xcelium/files/xmsimrc
+xcelium> source /eda/cadence/2021-22/RHELx86/XCELIUM_21.03.009/tools/methodology/UVM/CDNS-1.2/sv/files/tcl/uvm_sim.tcl
+xcelium> run
+UVM_INFO @ 0: reporter [RNTST] Running test minmax_test...
+[1;30m[103m*** Created tester type: base_tester ***[0m
+
+UVM_INFO /eda/cadence/2021-22/RHELx86/XCELIUM_21.03.009/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh(605) @ 0: reporter [UVMTOP] UVM testbench topology:
+----------------------------------------------------------------
+Name                     Type                        Size  Value
+----------------------------------------------------------------
+uvm_test_top             minmax_test                 -     @1946
+  env_h                  env                         -     @2023
+    command_f            uvm_tlm_fifo #(T)           -     @2053
+      get_ap             uvm_analysis_port           -     @2257
+      get_peek_export    uvm_get_peek_imp            -     @2157
+      put_ap             uvm_analysis_port           -     @2207
+      put_export         uvm_put_imp                 -     @2105
+    command_monitor_h    command_monitor             -     @2519
+      ap                 uvm_analysis_port           -     @2609
+    coverage_h           coverage                    -     @2352
+      analysis_imp       uvm_analysis_imp            -     @2402
+    driver_h             driver                      -     @2321
+      command_port       uvm_get_port                -     @2665
+    result_monitor_h     result_monitor              -     @2550
+      ap                 uvm_analysis_port           -     @2719
+    scoreboard_h         scoreboard                  -     @2436
+      analysis_imp       uvm_analysis_imp            -     @2486
+      cmd_f              uvm_tlm_analysis_fifo #(T)  -     @2750
+        analysis_export  uvm_analysis_imp            -     @2999
+        get_ap           uvm_analysis_port           -     @2948
+        get_peek_export  uvm_get_peek_imp            -     @2850
+        put_ap           uvm_analysis_port           -     @2899
+        put_export       uvm_put_imp                 -     @2801
+    tester_h             base_tester                 -     @2290
+      command_port       uvm_put_port                -     @3057
+----------------------------------------------------------------
+
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 2260 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001111010
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110001101010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 3480 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100101
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000110001110000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 5500 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1111010001
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110001110010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 7320 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000011111000110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 9740 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110001101101
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 11560 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000110001101110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 13980 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000011111001101
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 15200 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000001000010100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 17020 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110001000100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 19240 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000110000100100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 20860 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1010111001
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110001000001
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 22880 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1010100010
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000110000101011
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 24100 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110001000011
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 25320 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000110000101110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 27540 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000110000111110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 29960 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1100111001
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000110000101010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 32380 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1110010110
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110000111111
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 34800 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000110000101111
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 36420 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110000111001
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 39040 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001110000
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000110000100010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 40260 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110000110111
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 42680 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1100101011
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000011111100101
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 44900 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001011101
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000110000110110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 46720 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000110001001100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 48140 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110000111000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 49360 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1100101101
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000110000100110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 50980 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1011111011
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110000110100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 53200 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000011111100100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 55020 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110001111011
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 57240 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000110001111101
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 59660 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000110001011001
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 61480 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000110001111010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 63900 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1101110100
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110001111111
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 66320 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000001000010011
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 68940 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110001000000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 71160 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000110000101001
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 72580 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110001000110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 73800 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000110000101000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 76020 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1010110110
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000110000111010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 77640 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000110000110000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 79660 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1101000010
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110001101010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 81680 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1101100011
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000110001110000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 83700 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110001110010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 85120 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000011111000110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 87540 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110001101101
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 88760 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000110001101110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 90180 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1110001011
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000011111001101
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 92 US) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000001000010100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 94620 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1010000110
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110001000100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 97240 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000110000100100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 99460 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110001000001
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 101880 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000110000101011
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 104300 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110001000011
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 106720 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000110000101110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 109140 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000110000111110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 110760 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000110000101010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 113380 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110000111111
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 115200 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1110101001
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000110000101111
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 116420 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110000111001
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 118440 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000110000100010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 120460 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110000110111
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 121880 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1110110111
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000011111100101
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 123100 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1011010011
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000110000110110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 124520 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000110001001100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 127140 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110000111000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 129560 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1101101010
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000110000100110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 130980 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110000110100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 133200 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1101011111
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000011111100100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 135620 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110001111011
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 137240 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000110001111101
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 138860 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000110001011001
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 140280 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000110001111010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 142100 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110001111111
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 143920 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1100110011
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000001000010011
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 145340 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110001000000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 147360 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000110000101001
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 148780 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110001000110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 150600 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000110000101000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 152020 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000110000111010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 153840 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1011100110
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000110000110000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 155260 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110001101010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 157680 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000110001110000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 159500 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1111010001
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110001110010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 161520 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000011111000110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 163140 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110001101101
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 164560 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000110001101110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 167180 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000011111001101
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 169 US) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000001000010100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 170820 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110001000100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 173040 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000110000100100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 174860 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110001000001
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 176080 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1100110101
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000110000101011
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 178700 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110001000011
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 179920 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000110000101110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 181140 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000110000111110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 182560 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1101010110
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000110000101010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 183780 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110000111111
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 185200 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001100100
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000110000101111
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 187820 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110000111001
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 190440 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000110000100010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 192260 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110000110111
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 193680 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000011111100101
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 195100 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000110000110110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 196520 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000110001001100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 198340 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110000111000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 200560 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1111100111
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000110000100110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 201980 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110000110100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 204 US) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000011111100100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 206420 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001111001
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110001111011
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 208240 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000110001111101
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 209460 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1111110101
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000110001011001
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 211880 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000110001111010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 213300 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110001111111
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 215520 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000001000010011
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 216740 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110001000000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 217960 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1110001110
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000110000101001
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 219380 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110001000110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 221600 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000110000101000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 224220 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1010101000
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000110000111010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 226040 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000110000110000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 228460 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110001101010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 230280 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000110001110000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 232500 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110001110010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 235120 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000011111000110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 236340 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110001101101
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 238360 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000110001101110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 239980 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000011111001101
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 242200 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000001000010100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 243820 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110001000100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 245640 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000110000100100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 247860 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110001000001
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 250280 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000110000101011
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 252500 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110001000011
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 254120 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000110000101110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 256540 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000110000111110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 257760 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000110000101010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 260180 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110000111111
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 261400 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000110000101111
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 262620 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110000111001
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 264240 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000110000100010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 265460 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110000110111
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 266680 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1010111100
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000011111100101
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 268900 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000110000110110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 271120 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000110001001100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 273340 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110000111000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 274960 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1111110110
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000110000100110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 276380 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110000110100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 278800 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000010011
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000011111100100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 281220 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110001111011
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 283640 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000110001111101
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 286260 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000110001011001
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 288080 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000110001111010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 289500 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1110001101
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110001111111
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 291320 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000001000010011
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 293740 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1101010101
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110001000000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 296360 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000110000101001
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 298580 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110001000110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 300200 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1111111100
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000110000101000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 301420 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1100110101
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000110000111010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 303640 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000110000110000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 305060 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110001101010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 307680 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000110001110000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 309300 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110001110010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 311320 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000011111000110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 313740 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1100000110
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110001101101
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 315960 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000110001101110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 317780 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001011110
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000011111001101
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 320200 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000001000010100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 321620 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110001000100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 323640 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000110000100100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 325660 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110001000001
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 328280 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000110000101011
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 330900 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110001000011
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 332720 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000110000101110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 335140 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000110000111110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 337360 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000110000101010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 338580 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110000111111
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 340800 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1100111100
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000110000101111
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 342620 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1011010101
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110000111001
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 344840 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000110000100010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 346260 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001101011
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110000110111
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 348280 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000011111100101
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 350300 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000110000110110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 351720 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000110001001100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 353940 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110000111000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 356560 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000110000100110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 359180 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110000110100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 360400 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1011101100
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000011111100100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 362620 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110001111011
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 363840 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1110111011
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000110001111101
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 365660 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000110001011001
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 368080 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000110001111010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 370100 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110001111111
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 371720 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000001000010011
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 373940 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110001000000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 375360 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000110000101001
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 376780 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110001000110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 379 US) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000110000101000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 381620 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000110000111010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 382840 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000110000110000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 384260 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1111101000
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110001101010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 386080 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000110001110000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 387500 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110001110010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 388720 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000011111000110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 390140 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110001101101
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 391960 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000110001101110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 394380 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000011111001101
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 396400 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1100111001
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000001000010100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 397820 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1111010001
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110001000100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 400240 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000110000100100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 401660 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110001000001
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 403080 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000110000101011
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 404500 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110001000011
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 405720 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001010100
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000110000101110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 406940 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001110110
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000110000111110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 409360 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000110000101010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 411780 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110000111111
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 413400 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1011011010
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000110000101111
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 415020 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1100101101
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110000111001
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 416240 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000110000100010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 418060 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110000110111
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 419680 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000011111100101
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 421700 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000110000110110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 423520 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000110001001100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 425740 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110000111000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 428160 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000110000100110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 429380 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110000110100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 431200 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000011111100100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 432820 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1100100100
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110001111011
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 434440 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000110001111101
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 436260 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1100011011
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000110001011001
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 438880 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000110001
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000110001111010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 440300 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110001111111
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 442720 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000001000010011
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 443940 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1101110010
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110001000000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 446360 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000110000101001
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 448180 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110001000110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 450600 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000110000101000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 452420 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000110000111010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 454640 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000110000110000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 456260 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110001101010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 458480 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000110001110000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 459900 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110001110010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 461920 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000011111000110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 463940 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110001101101
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 465760 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000110001101110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 467780 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000011111001101
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 469400 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000001000010100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 470820 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110001000100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 472040 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1110100110
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000110000100100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 473860 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110001000001
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 475480 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000110000101011
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 477100 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110001000011
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 478520 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000110000101110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 479940 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000110000111110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 481360 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000110000101010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 483580 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1010011101
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110000111111
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 485400 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1011010101
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000110000101111
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 488020 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110000111001
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 490240 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000110000100010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 492460 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1110011100
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110000110111
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 493680 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1100010100
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000011111100101
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 495300 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000110000110110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 497920 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000110001001100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 500140 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110000111000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 501960 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000110000100110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 503180 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110000110100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 504800 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000011111100100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 506220 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110001111011
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 507840 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000110001111101
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 509060 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1100111111
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000110001011001
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 511480 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1010000110
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000110001111010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 513700 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110001111111
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 514920 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000001000010011
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 516340 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1101010000
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110001000000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 518160 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000110000101001
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 520180 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1110000010
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110001000110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 522200 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000110000101000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 524620 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000110000111010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 526840 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1001000000
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000110000110000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 529460 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1110101010
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110001101010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 530680 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000110001110000
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 531900 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110001110010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 533520 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000011111000110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 534740 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1101100110
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110001101101
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 537360 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000110001101110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 539380 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000011111001101
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 541600 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000001000010100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 543620 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1010000000
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110001000100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 545640 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1111111001
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000110000100100
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 547860 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000110001
+Received: 00000000000000000000110001000001
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 549280 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000110000101011
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 550900 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000111011
+Received: 00000000000000000000110001000011
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 552320 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000100000
+Expected: 00000000000000000000110000100001
+Received: 00000000000000000000110000101110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 553940 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000010
+Expected: 00000000000000000000110000110011
+Received: 00000000000000000000110000111110
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 555960 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000100011
+Received: 00000000000000000000110000101010
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 558180 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000100
+Expected: 00000000000000000000110000111100
+Received: 00000000000000000000110000111111
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 559400 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000001
+Expected: 00000000000000000000110000101101
+Received: 00000000000000000000110000101111
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 560620 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110001000000
+Received: 00000000000000000000110000111001
+xmsim: *E,ASRTST (../tb/tb_classes/scoreboard.svh,135): (time 561840 NS) Assertion worklib.alu_pkg::scoreboard@2436_1.write.SCOREBOARD_CHECK has failed 
+Test FAILED for 
+command: 1000000111
+Expected: 00000000000000000000110000011111
+Received: 00000000000000000000110000101011
+UVM_INFO /eda/cadence/2021-22/RHELx86/XCELIUM_21.03.009/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_objection.svh(1271) @ 569400: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+[1;30m[101m-----------------------------------
+----------- Test FAILED -----------
+-----------------------------------[0m
+
+UVM_INFO /eda/cadence/2021-22/RHELx86/XCELIUM_21.03.009/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_report_catcher.svh(705) @ 569400: reporter [UVM/REPORT/CATCHER] 
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+UVM_INFO /eda/cadence/2021-22/RHELx86/XCELIUM_21.03.009/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_report_server.svh(847) @ 569400: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :    4
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[RNTST]     1
+[TEST_DONE]     1
+[UVM/REPORT/CATCHER]     1
+[UVMTOP]     1
+
+Simulation complete via $finish(1) at time 569400 NS + 59
+/eda/cadence/2021-22/RHELx86/XCELIUM_21.03.009/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh:543     $finish;
+xcelium> exit
+See ./cov_work/scope/minmax_test/icc.com file for message(s) on coverage constant object marking
+
+coverage setup:
+  workdir  :  ./cov_work
+  dutinst  :  top(top)
+  scope    :  scope
+  testname :  minmax_test
+
+coverage files:
+  model(design data) :  ./cov_work/scope/icc_305a111c_154f001c.ucm (reused)
+  data               :  ./cov_work/scope/minmax_test/icc_305a111c_154f001c.ucd
+TOOL:	xrun	21.03-s009: Exiting on Jan 05, 2023 at 17:52:16 CET  (total: 00:00:01)

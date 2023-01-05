@@ -1,0 +1,86 @@
+TOOL:	xrun	21.03-s009: Started on Jan 05, 2023 at 17:51:05 CET
+xrun
+	-F ../tb/tb.f
+		-F ../tb/../../rtl/rtl.f
+			vdic_dut_2022_1_4.sv
+		alu_pkg.sv
+		alu_bfm.sv
+		top.sv
+		+incdir+tb_classes
+		+incdir+.
+		-uvm
+		-uvmhome /eda/cadence/2021-22/RHELx86/XCELIUM_21.03.009/tools/methodology/UVM/CDNS-1.2/sv
+		+UVM_NO_RELNOTES
+		+UVM_VERBOSITY=MEDIUM
+		-linedebug
+		-fsmdebug
+		-uvmlinedebug
+	-v93
+	+nowarnDSEM2009
+	+nowarnDSEMEL
+	+nowarnCGDEFN
+	+nowarnCOVUTA
+	+nowarnBADPRF
+	+nowarnXCLGNOPTM
+	+nowarnRNDXCELON
+	+nowarnSAWSTP
+	-xmlibdirname INCA_libs
+	+overwrite
+	-nocopyright
+	-coverage all
+	-covoverwrite
+	-covfile xrun_covfile.txt
+	-covtest add_test
+	+UVM_TESTNAME=add_test
+	-l xrun_test_add_test.log
+
+   User defined plus("+") options:
+	+UVM_NO_RELNOTES
+	+UVM_VERBOSITY=MEDIUM
+
+Loading snapshot worklib.top:sv .................... Done
+SVSEED default: 1
+xcelium> source /eda/cadence/2021-22/RHELx86/XCELIUM_21.03.009/tools/xcelium/files/xmsimrc
+xcelium> source /eda/cadence/2021-22/RHELx86/XCELIUM_21.03.009/tools/methodology/UVM/CDNS-1.2/sv/files/tcl/uvm_sim.tcl
+xcelium> run
+UVM_WARNING @ 0: reporter [BDTYP] Cannot create a component of type 'add_test' because it is not registered with the factory.
+UVM_FATAL @ 0: reporter [INVTST] Requested test from command line +UVM_TESTNAME=add_test not found.
+UVM_INFO /eda/cadence/2021-22/RHELx86/XCELIUM_21.03.009/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_report_catcher.svh(705) @ 0: reporter [UVM/REPORT/CATCHER] 
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+UVM_INFO /eda/cadence/2021-22/RHELx86/XCELIUM_21.03.009/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_report_server.svh(847) @ 0: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :    1
+UVM_WARNING :    1
+UVM_ERROR :    0
+UVM_FATAL :    1
+** Report counts by id
+[BDTYP]     1
+[INVTST]     1
+[UVM/REPORT/CATCHER]     1
+
+Simulation complete via $finish(1) at time 0 FS + 0
+/eda/cadence/2021-22/RHELx86/XCELIUM_21.03.009/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh:135     $finish;
+xcelium> exit
+See ./cov_work/scope/add_test/icc.com file for message(s) on coverage constant object marking
+
+coverage setup:
+  workdir  :  ./cov_work
+  dutinst  :  top(top)
+  scope    :  scope
+  testname :  add_test
+
+coverage files:
+  model(design data) :  ./cov_work/scope/icc_305a111c_4183059e.ucm
+  data               :  ./cov_work/scope/add_test/icc_305a111c_4183059e.ucd
+TOOL:	xrun	21.03-s009: Exiting on Jan 05, 2023 at 17:51:05 CET  (total: 00:00:00)
